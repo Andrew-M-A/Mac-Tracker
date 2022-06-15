@@ -16,5 +16,12 @@ header {
 }
 
 input {
+  text-align: center;
   padding: 0.2rem;
+}
+
+.small-input {
+  width: 3rem;
+  margin-left: 5rem;
+  margin-right: 5rem;
 }
