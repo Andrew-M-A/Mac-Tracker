@@ -17,17 +17,21 @@ header {
 
 input {
   text-align: center;
-  padding: 0.2rem;
+  padding: 0.6rem;
+  margin: 1rem;
 }
 
 .small-input {
   width: 3rem;
-  margin-left: 5rem;
-  margin-right: 5rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
 }
 
-option {
+select {
+  font-size: 12px;
   text-align: center;
+  appearance: menulist-button;
+  height: 2rem;
 }
 
 button {

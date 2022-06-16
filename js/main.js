@@ -1,4 +1,24 @@
-console.log('hellow world');
+var $form = document.querySelector('form');
+var $name = document.querySelector('.name-input');
+var $heightFeet = document.querySelector('#feet');
+var $heightInches = document.querySelector('#inches');
+var $age = document.querySelector('#age');
+var $activity = document.querySelector('#activity-select');
+var $goals = document.querySelector('#goals-select');
+
+$form.addEventListener('submit', createProfile);
+
+function createProfile(event) {
+
+  var profile = {
+    name: $name.value,
+    heightFeet: $heightFeet.value,
+    heightInches: $heightInches.value,
+    age: $age.value,
+    activity: $activity.value,
+    goal: $goals.value
+  };
+}
 
 function foodSearch(name) {
   var xhr = new XMLHttpRequest();
@@ -6,18 +26,18 @@ function foodSearch(name) {
   xhr.responseType = 'json';
   xhr.addEventListener('load', function () {
     var foodData = xhr.response;
-    console.log(foodData);
+    // console.log(foodData);
     var servingSize = Math.floor(foodData.totalWeight);
     var calories = Math.floor(foodData.calories);
     var carbs = Math.floor(foodData.totalNutrients.CHOCDF.quantity);
     var protein = Math.floor(foodData.totalNutrients.PROCNT.quantity);
     var fat = Math.floor(foodData.totalNutrients.FAT.quantity);
 
-    console.log(name, 'serving size: ', servingSize, 'grams');
-    console.log(name, 'calorie count: ', calories);
-    console.log(name, 'carbs count: ', carbs, 'grams');
-    console.log(name, 'protein count: ', protein, 'grams');
-    console.log(name, 'fat count: ', fat, 'grams');
+    // console.log(name, 'serving size: ', servingSize, 'grams');
+    // console.log(name, 'calorie count: ', calories);
+    // console.log(name, 'carbs count: ', carbs, 'grams');
+    // console.log(name, 'protein count: ', protein, 'grams');
+    // console.log(name, 'fat count: ', fat, 'grams');
 
     var $calories = document.createElement('li');
     $calories.textContent = 'calorie count: ' + calories;
