@@ -20,6 +20,8 @@ function createProfile(event) {
     activity: $activity.value,
     goal: $goals.value
   };
+
+  console.log(profile);
 }
 
 function foodSearch(name) {
