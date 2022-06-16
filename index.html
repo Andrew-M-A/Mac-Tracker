@@ -34,24 +34,25 @@
           <h1 class="letter-spacing-2">What's your name?</h1>
         </div>
         <div class="row">
-          <input type="text" class="name-input">
+          <input type="text" class="name-input" required>
         </div>
         <div class="row">
           <p> Height </p>
         </div>
         <div class="row">
-          <input placeholder="feet" type="text" class="small-input" maxlength="1">
-          <input placeholder="inches" type="text" class="small-input" maxlength="2">
+          <input placeholder="feet" type="text" class="small-input" maxlength="1" required>
+          <input placeholder="inches" type="text" class="small-input" maxlength="2" required>
         </div>
         <div class="row">
           <p>Age</p>
         </div>
-        <div class="row"> <input type="text" class="small-input"> </div>
+        <div class="row"> <input type="text" class="small-input" required> </div>
         <div class="row">
           <h3 class="letter-spacing-2">Activity Level?</h3>
         </div>
         <div class="row">
-          <select name="activity" id="activity-select">
+          <select name="activity" id="activity-select" required>
+            <option value="">Select Your Activity Level:</option>
             <option value="light"> Light (exercise 1-3 times a week)</option>
             <option value="moderate"> Moderate (exercise 4-5 times a week)</option>
             <option value="heavy"> Heavy (exercise daily or physically demanding job) </option>
@@ -62,7 +63,8 @@
           <h3 class="letter-spacing-2">What are your goals?</h3>
         </div>
         <div class="row">
-          <select name="goals" id="goals-select">
+          <select name="goals" id="goals-select" required>
+            <option value=""> Select your weight goal:</option>
             <option value="maintain"> Maintain Weight </option>
             <option value="gain"> Gain Weight </option>
             <option value="lose"> Lose Weight </option>
