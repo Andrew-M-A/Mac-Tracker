@@ -1,0 +1,43 @@
+body {
+  margin: 0 auto;
+  background-color: #f6f6f6;
+  font-family:
+    "Red Hat Display",
+    sans-serif;
+}
+
+header {
+  background-color: #ffa200;
+  color: white;
+}
+
+.letter-spacing-2 {
+  letter-spacing: 2px;
+}
+
+input {
+  text-align: center;
+  padding: 0.6rem;
+  margin: 1rem;
+}
+
+.small-input {
+  width: 3rem;
+  margin-left: 4rem;
+  margin-right: 4rem;
+}
+
+select {
+  font-size: 12px;
+  text-align: center;
+  appearance: menulist-button;
+  height: 2rem;
+}
+
+button {
+  margin: 2rem;
+  padding: 10px 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}

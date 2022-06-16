@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +9,77 @@
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/layout.css">
   <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;1,300&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
+
   <header>
+    <div class="container">
+      <div class="row justify-center">
+        <div class="column">
+          <h1 class="letter-spacing-2">MAC TRACKER</h1>
+        </div>
+      </div>
+    </div>
   </header>
+
   <main>
+    <div data-view="profile">
+      <form action="">
+        <div class="row">
+          <h1 class="letter-spacing-2">What's your name?</h1>
+        </div>
+        <div class="row">
+          <input type="text" class="name-input" required>
+        </div>
+        <div class="row">
+          <p> Height </p>
+        </div>
+        <div class="row">
+          <input id="feet" placeholder="feet" type="text" class="small-input" maxlength="1" required>
+          <input id="inches" placeholder="inches" type="text" class="small-input" maxlength="2" required>
+        </div>
+        <div class="row">
+          <p>Age</p>
+        </div>
+        <div class="row"> <input id="age" type="text" class="small-input" maxlength="3" required> </div>
+        <div class="row">
+          <h3 class="letter-spacing-2">Activity Level?</h3>
+        </div>
+        <div class="row">
+          <select name="activity" id="activity-select" required>
+            <option value="">Select Your Activity Level:</option>
+            <option value="light"> Light (exercise 1-3 times a week)</option>
+            <option value="moderate"> Moderate (exercise 4-5 times a week)</option>
+            <option value="heavy"> Heavy (exercise daily or physically demanding job) </option>
+          </select>
+        </div>
+
+        <div class="row">
+          <h3 class="letter-spacing-2">What are your goals?</h3>
+        </div>
+        <div class="row">
+          <select name="goals" id="goals-select" required>
+            <option value=""> Select your weight goal:</option>
+            <option value="maintain"> Maintain Weight </option>
+            <option value="gain"> Gain Weight </option>
+            <option value="lose"> Lose Weight </option>
+          </select>
+        </div>
+
+        <div class="row">
+          <button type="submit"> MACALCULATE </button>
+        </div>
+
+      </form>
+    </div>
   </main>
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
 </body>
+
 </html>
