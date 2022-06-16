@@ -25,3 +25,15 @@ input {
   margin-left: 5rem;
   margin-right: 5rem;
 }
+
+option {
+  text-align: center;
+}
+
+button {
+  margin: 2rem;
+  padding: 10px 50px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+}
