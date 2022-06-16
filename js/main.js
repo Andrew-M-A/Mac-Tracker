@@ -10,6 +10,8 @@ $form.addEventListener('submit', createProfile);
 
 function createProfile(event) {
 
+  event.preventDefault();
+
   var profile = {
     name: $name.value,
     heightFeet: $heightFeet.value,
