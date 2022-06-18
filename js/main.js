@@ -1,7 +1,10 @@
+var $account = document.querySelector('[data-view="account"');
+var $profile = document.querySelector('[data-view="profile"');
 var $form = document.querySelector('form');
 var $name = document.querySelector('.name-input');
 var $heightFeet = document.querySelector('#feet');
 var $heightInches = document.querySelector('#inches');
+var $weight = document.querySelector('#weight');
 var $age = document.querySelector('#age');
 var $activity = document.querySelector('#activity-select');
 var $goals = document.querySelector('#goals-select');
@@ -16,12 +19,47 @@ function createProfile(event) {
     name: $name.value,
     heightFeet: $heightFeet.value,
     heightInches: $heightInches.value,
+    weight: $weight.value,
     age: $age.value,
     activity: $activity.value,
     goal: $goals.value
   };
 
-  console.log(profile);
+  renderProfile(profile);
+}
+
+function renderProfile(profile) {
+
+  var $profName = document.querySelector('#profile-name');
+  $profName.textContent = profile.name + '\'s' + ' Profile';
+
+  var $profAge = document.querySelector('#prof-age');
+  $profAge.textContent = 'Age: ' + profile.age;
+
+  var $profHeight = document.querySelector('#prof-height');
+  $profHeight.textContent = 'Height: ' + profile.heightFeet + '\'' + profile.heightInches + '"';
+
+  var $profWeight = document.querySelector('#prof-weight');
+  $profWeight.textContent = 'Weight: ' + profile.weight;
+
+  var $profActivity = document.querySelector('#prof-activity');
+  $profActivity.textContent = 'Activity Level: ' + profile.activity;
+
+  var $profGoal = document.querySelector('#prof-goal');
+  $profGoal.textContent = 'Goal: ' + profile.goal;
+
+  var totalInches = parseInt(profile.heightFeet) * 12 + parseInt(profile.heightInches);
+
+  var bmrMale = 66.47 + (6.24 * profile.weight) + (12.7 * totalInches) - (6.75 * profile.age);
+
+  var bmrFemale = 65.51 + (4.35 * profile.weight) + (4.7 * totalInches) - (4.7 * profile.age);
+
+  console.log('Value of heightFeet: ', profile.heightFeet);
+  console.log('Value of heightInches: ', profile.heightInches);
+  console.log(totalInches);
+  console.log('Calories: ', bmrMale);
+
+  $account.className = 'hidden';
 }
 
 function foodSearch(name) {

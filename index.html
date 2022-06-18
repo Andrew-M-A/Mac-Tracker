@@ -28,7 +28,48 @@
   </header>
 
   <main>
-    <div data-view="profile">
+
+    <div data-view="profile" class="hidden">
+      <div class="row letter-spacing-2">
+        <h1 id="profile-name"></h1>
+      </div>
+      <div class="row">
+        <span id="prof-age"></span>
+        <span id="prof-height"></span>
+        <span id="prof-weight"></span>
+      </div>
+      <div class="row">
+        <p id="prof-activity">Activity Level: Light</p>
+      </div>
+      <div class="row">
+        <p id="prof-goal">Goal: Maintain Weight</p>
+      </div>
+      <div class="row letter-spacing-2">
+        <h1>MACROS</h1>
+      </div>
+      <div class="row">
+        <p id="prof-ratio"> 40/30/30 </p>
+      </div>
+      <div class="row">
+        <h3 id="calories">CALORIES: 2350</h3>
+      </div>
+      <div class="row">
+        <h3 id="carbs">CARBS: 235 grams</h3>
+      </div>
+      <div class="row">
+        <h3 id="protein">PROTEIN: 176 GRAMS</h3>
+      </div>
+      <div class="row">
+        <h3 id="fat">FAT: 100 Grams</h3>
+      </div>
+      <div class="row">
+        <button>START TRACKIN!</button>
+      </div>
+    </div>
+
+
+
+    <div data-view="account">
       <form action="">
         <div class="row">
           <h1 class="letter-spacing-2">What's your name?</h1>
@@ -37,11 +78,27 @@
           <input type="text" class="name-input" required>
         </div>
         <div class="row">
+          <p>Gender</p>
+        </div>
+        <div class="row">
+          <select name="gender" id="gender">
+            <option value=""></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="row">
           <p> Height </p>
         </div>
         <div class="row">
           <input id="feet" placeholder="feet" type="text" class="small-input" maxlength="1" required>
           <input id="inches" placeholder="inches" type="text" class="small-input" maxlength="2" required>
+        </div>
+        <div class="row">
+          <p>Weight</p>
+        </div>
+        <div class="row">
+          <input id="weight" placeholder="lbs" type="text" class="small-input" maxlength="3" required>
         </div>
         <div class="row">
           <p>Age</p>
