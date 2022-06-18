@@ -28,7 +28,45 @@
   </header>
 
   <main>
-    <div data-view="profile">
+
+    <div data-view="profile" class="hidden">
+      <div class="row letter-spacing-2">
+        <h1 id="profile-name"></h1>
+      </div>
+      <div class="row">
+        <span id="prof-age"></span>
+        <span id="prof-height"></span>
+        <span id="prof-weight"></span>
+      </div>
+      <div class="row">
+        <p id="prof-activity"></p>
+      </div>
+      <div class="row">
+        <p id="prof-goal"></p>
+      </div>
+      <div class="row letter-spacing-2">
+        <h1>MACROS</h1>
+      </div>
+      <div class="row">
+        <h3 id="calories"></h3>
+      </div>
+      <div class="row">
+        <h3 id="carbs"></h3>
+      </div>
+      <div class="row">
+        <h3 id="protein"></h3>
+      </div>
+      <div class="row">
+        <h3 id="fat"></h3>
+      </div>
+      <div class="row">
+        <button>START TRACKIN!</button>
+      </div>
+    </div>
+
+
+
+    <div data-view="account" class="active">
       <form action="">
         <div class="row">
           <h1 class="letter-spacing-2">What's your name?</h1>
@@ -37,11 +75,27 @@
           <input type="text" class="name-input" required>
         </div>
         <div class="row">
+          <p>Gender</p>
+        </div>
+        <div class="row">
+          <select name="gender" id="gender">
+            <option value=""></option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+          </select>
+        </div>
+        <div class="row">
           <p> Height </p>
         </div>
         <div class="row">
           <input id="feet" placeholder="feet" type="text" class="small-input" maxlength="1" required>
           <input id="inches" placeholder="inches" type="text" class="small-input" maxlength="2" required>
+        </div>
+        <div class="row">
+          <p>Weight</p>
+        </div>
+        <div class="row">
+          <input id="weight" placeholder="lbs" type="text" class="small-input" maxlength="3" required>
         </div>
         <div class="row">
           <p>Age</p>
@@ -52,10 +106,11 @@
         </div>
         <div class="row">
           <select name="activity" id="activity-select" required>
-            <option value="">Select Your Activity Level:</option>
-            <option value="light"> Light (exercise 1-3 times a week)</option>
-            <option value="moderate"> Moderate (exercise 4-5 times a week)</option>
-            <option value="heavy"> Heavy (exercise daily or physically demanding job) </option>
+            <option value="">Select Your Activity Level: </option>
+            <option> Sedentary (little or no exercise) </option>
+            <option> Light (exercise 1-3 times a week) </option>
+            <option> Moderate (exercise 4-5 times a week)</option>
+            <option> Heavy (exercise daily or physically demanding job) </option>
           </select>
         </div>
 
@@ -65,9 +120,9 @@
         <div class="row">
           <select name="goals" id="goals-select" required>
             <option value=""> Select your weight goal:</option>
-            <option value="maintain"> Maintain Weight </option>
-            <option value="gain"> Gain Weight </option>
-            <option value="lose"> Lose Weight </option>
+            <option> Maintain Weight </option>
+            <option> Lose Weight (1lb per week) </option>
+            <option> Gain Weight (1lb per week) </option>
           </select>
         </div>
 
