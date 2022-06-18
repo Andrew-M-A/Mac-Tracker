@@ -2,6 +2,7 @@ var $account = document.querySelector('[data-view="account"');
 var $profile = document.querySelector('[data-view="profile"');
 var $form = document.querySelector('form');
 var $name = document.querySelector('.name-input');
+var $gender = document.querySelector('#gender');
 var $heightFeet = document.querySelector('#feet');
 var $heightInches = document.querySelector('#inches');
 var $weight = document.querySelector('#weight');
@@ -17,6 +18,7 @@ function createProfile(event) {
 
   var profile = {
     name: $name.value,
+    gender: $gender.value,
     heightFeet: $heightFeet.value,
     heightInches: $heightInches.value,
     weight: $weight.value,
@@ -50,14 +52,28 @@ function renderProfile(profile) {
 
   var totalInches = parseInt(profile.heightFeet) * 12 + parseInt(profile.heightInches);
 
-  var bmrMale = 66.47 + (6.24 * profile.weight) + (12.7 * totalInches) - (6.75 * profile.age);
+  // MIFFLIN - ST JEOR EQUATION
+  var bmrMale = Math.floor((4.536 * profile.weight) + (15.88 * totalInches) - (5 * profile.age) + 5);
 
-  var bmrFemale = 65.51 + (4.35 * profile.weight) + (4.7 * totalInches) - (4.7 * profile.age);
+  var bmrFemale = Math.floor((4.536 * profile.weight) + (15.88 * totalInches) - (5 * profile.age) - 161);
 
-  console.log('Value of heightFeet: ', profile.heightFeet);
-  console.log('Value of heightInches: ', profile.heightInches);
-  console.log(totalInches);
-  console.log('Calories: ', bmrMale);
+  if (profile.gender === 'male') {
+    profile.bmr = bmrMale;
+  } else {
+    profile.bmr = bmrFemale;
+  }
+
+  console.log(profile.activity);
+
+  if (profile.activity === 'sedentary') {
+    console.log('workin');
+  } else if (profile.activity === 'light') {
+    console.log('gettin there');
+  } else if (profile.activity === 'moderate') {
+    console.log('be readyyyyy');
+  } else {
+    console.log('come on girl, lesss goooo');
+  }
 
   $account.className = 'hidden';
 }
