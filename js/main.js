@@ -24,13 +24,52 @@ function createProfile(event) {
     weight: $weight.value,
     age: $age.value,
     activity: $activity.value,
-    goal: $goals.value
+    goal: $goals.value,
+    calories: null,
+    carbs: null,
+    protein: null,
+    fat: null
+
   };
 
   renderProfile(profile);
 }
 
 function renderProfile(profile) {
+
+  var totalInches = parseInt(profile.heightFeet) * 12 + parseInt(profile.heightInches);
+
+  // MIFFLIN-ST JEOR EQUATION
+  var bmrMale = Math.floor((4.536 * profile.weight) + (15.88 * totalInches) - (5 * profile.age) + 5);
+
+  var bmrFemale = Math.floor((4.536 * profile.weight) + (15.88 * totalInches) - (5 * profile.age) - 161);
+
+  if (profile.gender === 'male') {
+    profile.calories = bmrMale;
+  } else {
+    profile.calories = bmrFemale;
+  }
+
+  // multipliers from Harris-Benedict Equation
+  if (profile.activity === 'Sedentary (little or no exercise)') {
+    profile.calories = Math.round(profile.calories * 1.2);
+  } else if (profile.activity === 'Light (exercise 1-3 times a week)') {
+    profile.calories = Math.round(profile.calories * 1.375);
+  } else if (profile.activity === 'Moderate (exercise 4-5 times a week)') {
+    profile.calories = Math.round(profile.calories * 1.55);
+  } else {
+    profile.calories = Math.round(profile.calories * 1.725);
+  }
+
+  if (profile.goal === 'Maintain Weight') {
+    maCalculator(profile);
+  } else if (profile.goal === 'Lose Weight (1lb per week)') {
+    profile.calories = profile.calories - 500;
+    maCalculator(profile);
+  } else {
+    profile.calories = profile.calories + 500;
+    maCalculator(profile);
+  }
 
   var $profName = document.querySelector('#profile-name');
   $profName.textContent = profile.name + '\'s' + ' Profile';
@@ -50,32 +89,26 @@ function renderProfile(profile) {
   var $profGoal = document.querySelector('#prof-goal');
   $profGoal.textContent = 'Goal: ' + profile.goal;
 
-  var totalInches = parseInt(profile.heightFeet) * 12 + parseInt(profile.heightInches);
+  var $calories = document.querySelector('#calories');
+  $calories.textContent = 'CALORIES: ' + profile.calories;
 
-  // MIFFLIN - ST JEOR EQUATION
-  var bmrMale = Math.floor((4.536 * profile.weight) + (15.88 * totalInches) - (5 * profile.age) + 5);
+  var $carbs = document.querySelector('#carbs');
+  $carbs.textContent = 'CARBS: ' + profile.carbs;
 
-  var bmrFemale = Math.floor((4.536 * profile.weight) + (15.88 * totalInches) - (5 * profile.age) - 161);
+  var $protein = document.querySelector('#protein');
+  $protein.textContent = 'PROTEIN: ' + profile.protein;
 
-  if (profile.gender === 'male') {
-    profile.bmr = bmrMale;
-  } else {
-    profile.bmr = bmrFemale;
-  }
+  var $fat = document.querySelector('#fat');
+  $fat.textContent = 'FAT: ' + profile.fat;
 
-  console.log(profile.activity);
-
-  if (profile.activity === 'sedentary') {
-    console.log('workin');
-  } else if (profile.activity === 'light') {
-    console.log('gettin there');
-  } else if (profile.activity === 'moderate') {
-    console.log('be readyyyyy');
-  } else {
-    console.log('come on girl, lesss goooo');
-  }
-
+  $profile.className = 'active';
   $account.className = 'hidden';
+}
+
+function maCalculator(profile) {
+  profile.carbs = Math.floor(profile.calories / 8);
+  profile.protein = Math.floor(profile.calories / 16);
+  profile.fat = Math.floor(profile.calories / 36);
 }
 
 function foodSearch(name) {
@@ -85,7 +118,7 @@ function foodSearch(name) {
   xhr.addEventListener('load', function () {
     var foodData = xhr.response;
     // console.log(foodData);
-    var servingSize = Math.floor(foodData.totalWeight);
+    // var servingSize = Math.floor(foodData.totalWeight);
     var calories = Math.floor(foodData.calories);
     var carbs = Math.floor(foodData.totalNutrients.CHOCDF.quantity);
     var protein = Math.floor(foodData.totalNutrients.PROCNT.quantity);

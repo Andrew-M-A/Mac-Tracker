@@ -39,28 +39,25 @@
         <span id="prof-weight"></span>
       </div>
       <div class="row">
-        <p id="prof-activity">Activity Level: Light</p>
+        <p id="prof-activity"></p>
       </div>
       <div class="row">
-        <p id="prof-goal">Goal: Maintain Weight</p>
+        <p id="prof-goal"></p>
       </div>
       <div class="row letter-spacing-2">
         <h1>MACROS</h1>
       </div>
       <div class="row">
-        <p id="prof-ratio"> 40/30/30 </p>
+        <h3 id="calories"></h3>
       </div>
       <div class="row">
-        <h3 id="calories">CALORIES: 2350</h3>
+        <h3 id="carbs"></h3>
       </div>
       <div class="row">
-        <h3 id="carbs">CARBS: 235 grams</h3>
+        <h3 id="protein"></h3>
       </div>
       <div class="row">
-        <h3 id="protein">PROTEIN: 176 GRAMS</h3>
-      </div>
-      <div class="row">
-        <h3 id="fat">FAT: 100 Grams</h3>
+        <h3 id="fat"></h3>
       </div>
       <div class="row">
         <button>START TRACKIN!</button>
@@ -69,7 +66,7 @@
 
 
 
-    <div data-view="account">
+    <div data-view="account" class="active">
       <form action="">
         <div class="row">
           <h1 class="letter-spacing-2">What's your name?</h1>
@@ -109,11 +106,11 @@
         </div>
         <div class="row">
           <select name="activity" id="activity-select" required>
-            <option value="">Select Your Activity Level:</option>
-            <option value="sedentary"> Sedentary (little or no exercise)</option>
-            <option value="light"> Light (exercise 1-3 times a week)</option>
-            <option value="moderate"> Moderate (exercise 4-5 times a week)</option>
-            <option value="heavy"> Heavy (exercise daily or physically demanding job) </option>
+            <option value="">Select Your Activity Level: </option>
+            <option> Sedentary (little or no exercise) </option>
+            <option> Light (exercise 1-3 times a week) </option>
+            <option> Moderate (exercise 4-5 times a week)</option>
+            <option> Heavy (exercise daily or physically demanding job) </option>
           </select>
         </div>
 
@@ -123,9 +120,9 @@
         <div class="row">
           <select name="goals" id="goals-select" required>
             <option value=""> Select your weight goal:</option>
-            <option value="maintain"> Maintain Weight </option>
-            <option value="gain"> Gain Weight </option>
-            <option value="lose"> Lose Weight </option>
+            <option> Maintain Weight </option>
+            <option> Lose Weight (1lb per week) </option>
+            <option> Gain Weight (1lb per week) </option>
           </select>
         </div>
 
