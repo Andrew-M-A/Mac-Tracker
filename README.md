@@ -1,3 +1,3 @@
 # ajax-project
 
-A dynamic HTML, CSS, and JavaScript solo project.
+Dynamic caloric and macronutrient tracker
